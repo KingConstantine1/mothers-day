@@ -132,7 +132,7 @@ a {
   transform: translateY(-2px);
 }
 
-.kid-selector .thank-selector {
+.kid-selector .future-selector {
   grid-column: 1 / -1;
   min-height: 68px;
   font-size: 22px;
@@ -201,7 +201,7 @@ main[hidden],
 
 .kid-section,
 .mom-section,
-.thank-section {
+.future-section {
   display: grid;
   grid-template-columns: minmax(190px, 280px) minmax(0, 1fr);
   gap: clamp(24px, 5vw, 56px);
@@ -376,25 +376,24 @@ main[hidden],
 }
 
 .empty-gallery,
-.thank-gallery {
+.future-gallery {
   min-height: 320px;
   display: grid;
-  place-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
   padding: 32px;
   border: 1px dashed var(--line);
   border-radius: 8px;
   background: rgba(255, 250, 242, 0.72);
 }
 
-.thank-gallery img {
-  max-width: 360px;
-  height: auto;
-  aspect-ratio: 1;
+.future-gallery img {
+  height: 360px;
   object-fit: cover;
 }
 
 .empty-gallery p,
-.thank-gallery p {
+.future-gallery p {
   max-width: 420px;
   margin: 0;
   color: var(--muted);
@@ -485,7 +484,7 @@ footer p {
   .letter-section,
   .kid-section,
   .mom-section,
-  .thank-section {
+  .future-section {
     grid-template-columns: 1fr;
   }
 
@@ -530,7 +529,7 @@ footer p {
     font-size: 22px;
   }
 
-  .kid-selector .thank-selector {
+  .kid-selector .future-selector {
     font-size: 18px;
     line-height: 1.18;
   }

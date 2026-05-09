@@ -31,13 +31,13 @@ The visible galleries currently use photos from:
 - `curt`
 - `nick`
 - `cam`
-- `thank you`
+- `future`
 
 Each child section has a `<div class="gallery hex-gallery">` in `index.html`. Add or remove `<img>` lines there, and keep the paths relative, like `bryan/photo-name.JPG`.
 
 The hex layout expects six outside photos and one center photo named `Middle` when available. If a kid does not have a `Middle` photo yet, the page shows an "Add Middle photo" placeholder.
 
-The Thank You section has its own folder named `thank you`. Add photos there, then add matching `<img>` lines to the `thank-you` section in `index.html`.
+The Future section has its own folder named `future`. Add photos there, then add matching `<img>` lines to the `future` section in `index.html`.
 
 ## Publish On GitHub Pages
 

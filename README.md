@@ -31,8 +31,11 @@ The visible galleries currently use photos from:
 - `pictures/curt`
 - `pictures/nick`
 - `pictures/cam`
+- `thank you`
 
 Each child section has a `<div class="gallery">` in `index.html`. Add or remove `<img>` lines there, and keep the paths relative, like `pictures/bryan/photo-name.JPG`.
+
+The Thank You section has its own folder named `thank you`. Add photos there, then add matching `<img>` lines to the `thank-you` section in `index.html`.
 
 ## Publish On GitHub Pages
 

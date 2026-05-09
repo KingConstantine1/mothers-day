@@ -15,9 +15,9 @@ Open `index.html` and replace the paragraphs inside:
 Current song paths:
 
 - `bryan/Coming Home.mp3`
-- `meg/song.mp3`
+- `meg/YTDown_YouTube_Trace-Adkins-You-re-gonna-miss-this-with_Media_igm2iGvo-us_001_480p.mp4`
 - `curt/What a Wonderful World.m4a`
-- `nick/song.mp3`
+- `nick/A Song for Mama.mp4`
 - `cam/Thought You Should Know.mp4`
 
 If a song uses another format or filename, update that child's `data-song` path in `index.html`. Filename capitalization and spacing matter on GitHub Pages.
@@ -26,14 +26,16 @@ If a song uses another format or filename, update that child's `data-song` path 
 
 The visible galleries currently use photos from:
 
-- `pictures/bryan`
-- `pictures/meg`
-- `pictures/curt`
-- `pictures/nick`
-- `pictures/cam`
+- `bryan`
+- `meg`
+- `curt`
+- `nick`
+- `cam`
 - `thank you`
 
-Each child section has a `<div class="gallery">` in `index.html`. Add or remove `<img>` lines there, and keep the paths relative, like `pictures/bryan/photo-name.JPG`.
+Each child section has a `<div class="gallery hex-gallery">` in `index.html`. Add or remove `<img>` lines there, and keep the paths relative, like `bryan/photo-name.JPG`.
+
+The hex layout expects six outside photos and one center photo named `Middle` when available. If a kid does not have a `Middle` photo yet, the page shows an "Add Middle photo" placeholder.
 
 The Thank You section has its own folder named `thank you`. Add photos there, then add matching `<img>` lines to the `thank-you` section in `index.html`.
 

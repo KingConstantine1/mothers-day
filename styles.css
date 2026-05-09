@@ -42,7 +42,7 @@ a {
   grid-template-rows: auto 1fr;
   background:
     linear-gradient(90deg, rgba(24, 21, 18, 0.82), rgba(24, 21, 18, 0.38)),
-    url("pictures/100_3296.JPG") center / cover;
+    url("cover photo/Our Family.jpg") center / cover;
   color: #fffaf2;
 }
 

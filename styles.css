@@ -37,7 +37,7 @@ a {
 }
 
 .hero {
-  min-height: 92vh;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
   background:
@@ -62,27 +62,9 @@ a {
   text-transform: uppercase;
 }
 
-.navlinks {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-}
-
-.navlinks a {
-  border-bottom: 1px solid transparent;
-}
-
-.navlinks a:hover,
-.navlinks a:focus-visible {
-  border-color: currentColor;
-}
-
 .hero-copy {
   align-self: end;
-  max-width: 840px;
+  max-width: 960px;
   padding: 0 clamp(18px, 5vw, 64px) 12vh;
 }
 
@@ -114,8 +96,45 @@ a {
   font-size: 18px;
 }
 
+.kid-selector {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 820px;
+  margin-top: 34px;
+}
+
+.kid-selector button {
+  min-height: 86px;
+  padding: 18px 12px;
+  border: 1px solid rgba(255, 250, 242, 0.72);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.15);
+  color: #fffaf2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.kid-selector button:hover,
+.kid-selector button:focus-visible,
+.kid-selector button.is-active {
+  background: rgba(255, 250, 242, 0.92);
+  border-color: #fffaf2;
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
 main {
   overflow: hidden;
+}
+
+main[hidden],
+.kid-section[hidden] {
+  display: none;
 }
 
 .letter-section,
@@ -338,6 +357,10 @@ footer p {
     grid-template-columns: 1fr;
   }
 
+  .kid-selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .kid-copy {
     position: static;
   }
@@ -357,12 +380,17 @@ footer p {
     flex-direction: column;
   }
 
-  .navlinks {
-    justify-content: flex-start;
-  }
-
   .hero-copy h1 {
     font-size: 38px;
+  }
+
+  .kid-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .kid-selector button {
+    min-height: 62px;
+    font-size: 22px;
   }
 
   .section-heading h2,

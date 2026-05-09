@@ -2,10 +2,46 @@ const player = document.querySelector(".player");
 const audio = document.querySelector("#audio-player");
 const playerTitle = document.querySelector("#player-title");
 const closePlayer = document.querySelector(".close-player");
+const memories = document.querySelector("#memories");
+const siteFooter = document.querySelector("#site-footer");
+const kidSelectors = document.querySelectorAll(".kid-selector button");
+const kidSections = document.querySelectorAll(".kid-section");
 const songButtons = document.querySelectorAll(".song-button");
 const lightbox = document.querySelector("#lightbox");
 const lightboxImage = lightbox.querySelector("img");
 const lightboxClose = document.querySelector(".lightbox-close");
+
+const playSong = (song, title) => {
+  player.hidden = false;
+  audio.src = song;
+  playerTitle.textContent = title;
+
+  audio.play().catch(() => {
+    playerTitle.textContent = `${title} - press play`;
+  });
+};
+
+const showKid = (kidId) => {
+  memories.hidden = false;
+  siteFooter.hidden = false;
+
+  kidSections.forEach((section) => {
+    section.hidden = section.id !== kidId;
+  });
+
+  kidSelectors.forEach((selector) => {
+    selector.classList.toggle("is-active", selector.dataset.target === kidId);
+  });
+
+  document.querySelector(`#${kidId}`).scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+kidSelectors.forEach((button) => {
+  button.addEventListener("click", () => {
+    showKid(button.dataset.target);
+    playSong(button.dataset.song, button.dataset.title);
+  });
+});
 
 songButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -13,16 +49,7 @@ songButtons.forEach((button) => {
       return;
     }
 
-    const song = button.dataset.song;
-    const title = button.dataset.title;
-
-    player.hidden = false;
-    audio.src = song;
-    playerTitle.textContent = title;
-
-    audio.play().catch(() => {
-      playerTitle.textContent = `${title} - press play`;
-    });
+    playSong(button.dataset.song, button.dataset.title);
   });
 });
 

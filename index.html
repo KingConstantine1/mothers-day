@@ -15,8 +15,9 @@
       <div class="hero-copy">
         <p>Mother's Day 2026</p>
         <h1>Happy Mother's Day, Mom</h1>
-        <span>Choose a name to open their pictures and song.</span>
+        <span>Choose a name to open their page.</span>
         <div class="kid-selector" aria-label="Choose a kid">
+          <button type="button" data-target="mom">Mom</button>
           <button type="button" data-target="bryan" data-song="bryan/Coming Home.mp3" data-title="Coming Home">Bryan</button>
           <button type="button" data-target="meg" data-song="meg/song.mp3" data-title="Meg's song">Meg</button>
           <button type="button" data-target="curt" data-song="curt/What a Wonderful World.m4a" data-title="What a Wonderful World">Curt</button>
@@ -27,8 +28,29 @@
     </header>
 
     <main id="memories" hidden>
-      <section class="kid-section" id="bryan" data-kid="Bryan" hidden>
+      <section class="mom-section page-section" id="mom" hidden>
+        <div class="page-copy">
+          <button class="back-button" type="button">Back to main menu</button>
+          <p>Mom</p>
+          <h2>A Letter To You</h2>
+        </div>
+
+        <article class="letter">
+          <p>Dear Mom,</p>
+          <p>
+            This section is here for the letter we will add later.
+          </p>
+          <p>
+            For now, the kid pages are ready with pictures and songs.
+          </p>
+          <p>Love,</p>
+          <p>Your family</p>
+        </article>
+      </section>
+
+      <section class="kid-section page-section" id="bryan" data-kid="Bryan" hidden>
         <div class="kid-copy">
+          <button class="back-button" type="button">Back to main menu</button>
           <p>Bryan</p>
           <h2>Bryan And Mom</h2>
           <button class="song-button" type="button" data-song="bryan/Coming Home.mp3" data-title="Coming Home">Play Song</button>
@@ -43,8 +65,9 @@
         </div>
       </section>
 
-      <section class="kid-section" id="meg" data-kid="Meg" hidden>
+      <section class="kid-section page-section" id="meg" data-kid="Meg" hidden>
         <div class="kid-copy">
+          <button class="back-button" type="button">Back to main menu</button>
           <p>Meg</p>
           <h2>Meg And Mom</h2>
           <button class="song-button" type="button" data-song="meg/song.mp3" data-title="Meg's song">Play Song</button>
@@ -59,8 +82,9 @@
         </div>
       </section>
 
-      <section class="kid-section" id="curt" data-kid="Curt" hidden>
+      <section class="kid-section page-section" id="curt" data-kid="Curt" hidden>
         <div class="kid-copy">
+          <button class="back-button" type="button">Back to main menu</button>
           <p>Curt</p>
           <h2>Curt And Mom</h2>
           <button class="song-button" type="button" data-song="curt/What a Wonderful World.m4a" data-title="What a Wonderful World">Play Song</button>
@@ -75,8 +99,9 @@
         </div>
       </section>
 
-      <section class="kid-section" id="nick" data-kid="Nick" hidden>
+      <section class="kid-section page-section" id="nick" data-kid="Nick" hidden>
         <div class="kid-copy">
+          <button class="back-button" type="button">Back to main menu</button>
           <p>Nick</p>
           <h2>Nick And Mom</h2>
           <button class="song-button" type="button" data-song="nick/song.mp3" data-title="Nick's song">Play Song</button>
@@ -91,8 +116,9 @@
         </div>
       </section>
 
-      <section class="kid-section" id="cam" data-kid="Cam" hidden>
+      <section class="kid-section page-section" id="cam" data-kid="Cam" hidden>
         <div class="kid-copy">
+          <button class="back-button" type="button">Back to main menu</button>
           <p>Cam</p>
           <h2>Cam And Mom</h2>
           <button class="song-button" type="button" data-song="cam/Thought You Should Know.mp4" data-title="Thought You Should Know">Play Song</button>

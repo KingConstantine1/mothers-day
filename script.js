@@ -5,7 +5,8 @@ const closePlayer = document.querySelector(".close-player");
 const memories = document.querySelector("#memories");
 const siteFooter = document.querySelector("#site-footer");
 const kidSelectors = document.querySelectorAll(".kid-selector button");
-const kidSections = document.querySelectorAll(".kid-section");
+const pageSections = document.querySelectorAll(".page-section");
+const backButtons = document.querySelectorAll(".back-button");
 const songButtons = document.querySelectorAll(".song-button");
 const lightbox = document.querySelector("#lightbox");
 const lightboxImage = lightbox.querySelector("img");
@@ -22,10 +23,11 @@ const playSong = (song, title) => {
 };
 
 const showKid = (kidId) => {
+  document.body.classList.add("is-page-open");
   memories.hidden = false;
   siteFooter.hidden = false;
 
-  kidSections.forEach((section) => {
+  pageSections.forEach((section) => {
     section.hidden = section.id !== kidId;
   });
 
@@ -39,7 +41,10 @@ const showKid = (kidId) => {
 kidSelectors.forEach((button) => {
   button.addEventListener("click", () => {
     showKid(button.dataset.target);
-    playSong(button.dataset.song, button.dataset.title);
+
+    if (button.dataset.song) {
+      playSong(button.dataset.song, button.dataset.title);
+    }
   });
 });
 
@@ -70,6 +75,28 @@ closePlayer.addEventListener("click", () => {
   audio.removeAttribute("src");
   audio.load();
   player.hidden = true;
+});
+
+backButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    player.hidden = true;
+    memories.hidden = true;
+    siteFooter.hidden = true;
+    document.body.classList.remove("is-page-open");
+
+    pageSections.forEach((section) => {
+      section.hidden = true;
+    });
+
+    kidSelectors.forEach((selector) => {
+      selector.classList.remove("is-active");
+    });
+
+    document.querySelector("#top").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 });
 
 document.querySelectorAll(".gallery img").forEach((image) => {

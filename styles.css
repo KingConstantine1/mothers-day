@@ -132,7 +132,7 @@ a {
   transform: translateY(-2px);
 }
 
-.kid-selector .future-selector {
+.kid-selector .featured-selector {
   grid-column: 1 / -1;
   min-height: 68px;
   font-size: 22px;
@@ -530,7 +530,7 @@ footer p {
     font-size: 22px;
   }
 
-  .kid-selector .future-selector {
+  .kid-selector .featured-selector {
     font-size: 18px;
     line-height: 1.18;
   }

@@ -7,7 +7,6 @@ const siteFooter = document.querySelector("#site-footer");
 const kidSelectors = document.querySelectorAll(".kid-selector button");
 const pageSections = document.querySelectorAll(".page-section");
 const backButtons = document.querySelectorAll(".back-button");
-const songButtons = document.querySelectorAll(".song-button");
 const lightbox = document.querySelector("#lightbox");
 const lightboxImage = lightbox.querySelector("img");
 const lightboxClose = document.querySelector(".lightbox-close");
@@ -48,21 +47,10 @@ kidSelectors.forEach((button) => {
   });
 });
 
-songButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.classList.contains("is-missing")) {
-      return;
-    }
-
-    playSong(button.dataset.song, button.dataset.title);
-  });
-});
-
 audio.addEventListener("error", () => {
-  const activeButton = [...songButtons].find((button) => button.dataset.song === audio.getAttribute("src"));
+  const activeButton = [...kidSelectors].find((button) => button.dataset.song === audio.getAttribute("src"));
 
   if (activeButton) {
-    activeButton.textContent = "Add Song";
     activeButton.classList.add("is-missing");
     activeButton.setAttribute("aria-label", `${activeButton.dataset.title} is not added yet`);
   }

@@ -389,7 +389,8 @@ main[hidden],
 
 .future-gallery img {
   height: 360px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fffaf2;
 }
 
 .empty-gallery p,
